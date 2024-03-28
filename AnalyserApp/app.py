@@ -1,36 +1,62 @@
-from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.label import Label
-from kivy.uix.widget import Widget
-from kivy.graphics import Rectangle, Color
-from kivy.core.window import Window
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QDateEdit
+from PyQt5.QtGui import QPixmap, QFont
+from PyQt5.QtCore import Qt
+from PyQt5 import QtCore, QtWidgets
+class MyApp(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
 
-class TimelineWidget(Widget):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.timestamps = []
+    def initUI(self):
+        self.setFixedSize(600, 300)  
+        self.setWindowTitle('Analīzes aplikācija')
 
-    def add_timestamp(self, timestamp):
-        self.timestamps.append(timestamp)
-        self.draw_timeline()
 
-    def draw_timeline(self):
-        self.canvas.clear()
+        self.dateedit = QtWidgets.QDateEdit(calendarPopup=True)
+        self.dateedit.setGeometry(20, 20, 40, 40)
+        #self.menuBar().setCornerWidget(self.dateedit, QtCore.Qt.TopLeftCorner)
+        self.dateedit.setDateTime(QtCore.QDateTime.currentDateTime())
 
-        with self.canvas:
-            Color(0, 0, 1)  # Blue color
-            for timestamp in self.timestamps:
-                Rectangle(pos=(timestamp, 0), size=(10, 20))  # Adjust size as needed
 
-class MainApp(App):
-    def build(self):
-        self.timeline_widget = TimelineWidget()
-        self.timeline_widget.add_timestamp(100)  # Example timestamp
-        self.timeline_widget.add_timestamp(200)  # Example timestamp
-        self.timeline_widget.add_timestamp(300)  # Example timestamp
-        self.timeline_widget.add_timestamp(400)  # Example timestamp
-        return self.timeline_widget
+        # Set background image
+        self.background = QLabel(self)
+        self.background.setGeometry(0, 0, 600, 300)
+        background_pixmap = QPixmap('./data/images/background.png')
+        self.background.setPixmap(background_pixmap)
+        self.background.setScaledContents(True)
+
+        # Add percentage image
+        self.percentage_image = QLabel(self)
+        self.percentage_image.setGeometry(300, 0, 300, 300)  
+        percentage_pixmap = QPixmap('./data/images/percentage.png')  
+        self.percentage_image.setPixmap(percentage_pixmap)
+        self.percentage_image.setScaledContents(True)
+        self.percentage_image.setAttribute(Qt.WA_TranslucentBackground)
+
+        # Add text on the percentage image
+        Percentage_text = QLabel('75%', self)
+        Percentage_text.setGeometry(300, 0, 300, 300)  
+        Percentage_text.setAlignment(Qt.AlignCenter)
+        font = QFont('Bahnschrift', 48)  
+        Percentage_text.setFont(font)
+        Percentage_text.setStyleSheet("color: purple")  
+
+        # Add general text
+        Percentage_text = QLabel('Statistika', self)
+        Percentage_text.setGeometry(60, 0, 160, 60)  
+        Percentage_text.setAlignment(Qt.AlignCenter)
+        font = QFont('Bahnschrift', 24)  
+        Percentage_text.setFont(font)
+        Percentage_text.setStyleSheet("color: purple")  
+
+
+
+
+
+        self.show()
 
 if __name__ == '__main__':
-    Window.size = (800, 600)
-    MainApp().run()
+    app = QApplication(sys.argv)
+    ex = MyApp()
+    sys.exit(app.exec_())
