@@ -1,11 +1,11 @@
-import sys
+import sys, DB_Manager
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QDateEdit
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import Qt
 from PyQt5 import QtCore, QtWidgets
 
 
-
+DataBaseManager = DB_Manager.DBM()
 
 
 class MyApp(QWidget):
@@ -85,7 +85,7 @@ class MyApp(QWidget):
     def AprekinatRaditajus(self):
         start_date = self.start_date.selectedDate().toString("yyyy-MM-dd")
         end_date = self.end_date.selectedDate().toString("yyyy-MM-dd")
-        
+        print(DataBaseManager.GetTimePeriod(start_date, end_date))
         #print("start date:", start_date)
         #print("end date:", end_date)
         #start date: ['2024', '03', '29']

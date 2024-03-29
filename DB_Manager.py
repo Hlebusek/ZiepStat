@@ -35,12 +35,12 @@ class DBM(): # izveidojam datubāzes menedžera klasi, kas veiks visas darbības
 			SELECT * FROM ziepju_izmantosana
 			WHERE DATE BETWEEN {0} AND {1}
 		""".format(start_date, end_date))
-		
 		ziep_rows = self.cur.fetchall()
+
 		self.cur.execute("""
 			SELECT * FROM poda_nolaisana
 			WHERE DATE BETWEEN {0} AND {1}
 		""".format(start_date, end_date))
-		
 		pods_rows = self.cur.fetchall()
+		
 		return (ziep_rows,pods_rows)
