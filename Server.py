@@ -7,7 +7,7 @@ DataBaseManager = DBM()
 server = FastAPI()
 
 
-@server.post("/commit")
+@server.get("/commit")
 async def commitrecord(action: str):
     # Iegūstam datumu un laiku
     current_datetime = datetime.datetime.now()

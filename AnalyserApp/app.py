@@ -11,10 +11,11 @@ from PyQt5 import QtCore, QtWidgets
 class MyApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.initUI()
         self.toilet_used = 0
         self.soap_used = 0
         self.percentage = 0
+        self.initUI()
+
 
     def initUI(self):
         # izveidojam aplikācijas galveno logu, ar nosaukumu un izmēru
@@ -33,10 +34,12 @@ class MyApp(QWidget):
         self.start_date = QtWidgets.QCalendarWidget(self)
         self.start_date.setGeometry(10, 200, 140, 90)
         self.start_date.setDateEditAcceptDelay(2000)
+        self.start_date.selectionChanged.connect(self.AprekinatRaditajus)
         #
         self.end_date = QtWidgets.QCalendarWidget(self)
         self.end_date.setGeometry(160, 200, 140, 90)
         self.end_date.setDateEditAcceptDelay(2000)
+        self.end_date.selectionChanged.connect(self.AprekinatRaditajus)
  
         # pievienojam procentu rādītāja fona bildi
         self.percentage_image = QLabel(self)
@@ -80,7 +83,14 @@ class MyApp(QWidget):
         return int(self.soap_used/self.toilet_used)
 
     def AprekinatRaditajus(self):
-        pass
+        start_date = self.start_date.selectedDate().toString("yyyy-MM-dd")
+        end_date = self.end_date.selectedDate().toString("yyyy-MM-dd")
+        
+        #print("start date:", start_date)
+        #print("end date:", end_date)
+        #start date: ['2024', '03', '29']
+        #end date: ['2024', '03', '22']
+
 
 
 if __name__ == '__main__':
