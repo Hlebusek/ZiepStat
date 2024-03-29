@@ -9,9 +9,5 @@ server = FastAPI()
 
 @server.get("/commit")
 async def commitrecord(action: str):
-    # Iegūstam datumu un laiku
-    current_datetime = datetime.datetime.now()
-    current_date = current_datetime.date()
-    print("date > ", current_date)
-    current_time = current_datetime.time()
-    return DataBaseManager.WriteTable(current_date,current_time,action)
+    current_datetime = str(datetime.datetime.now())
+    return DataBaseManager.WriteTable(current_datetime,action)
