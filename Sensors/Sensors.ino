@@ -7,7 +7,7 @@
 #define photoresistorPin A0;  // fotorezistora pieslēgšanas pin
 #define LedPin D1;        // Gaismas diodes pieslēgšanas pin
 
-#define serverUrl "http://127.1.101.1/commit"; // servera adrese 
+#define serverUrl "http://127.0.0.1:8000/commit?action=pods"; // "http://127.0.0.1:8000/commit?action=ziepes"
 
 void setup() {
 

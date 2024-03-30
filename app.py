@@ -84,7 +84,8 @@ class MyApp(QWidget):
 
 
     def get_rgba_color(self,value):
-
+        if value > 100: value = 100
+        
         proportion = value / 100
         red = (255, 0, 0)  # Red
         yellow = (255, 255, 0)  # Yellow
