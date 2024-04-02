@@ -41,6 +41,12 @@ ja sensors sūtīs statistiku par ziepju izmantošanu
 pamācību par nodemcu moduļu programmēšanu var apskatīt te:
 ```https://www.instructables.com/Getting-Started-With-ESP8266LiLon-NodeMCU-V3Flashi/```
 
+4. un 5. koda rindā jānorāda wifi SSID un parole
+```
+#define ssid "your_network_ssid"
+#define password "your_network_password"
+```
+
 ## Analīzes aplikācija
 
 ![image](https://github.com/Hlebusek/ZiepStat/assets/69074631/ab8e0355-0942-4709-b1ba-69ddef279426)
