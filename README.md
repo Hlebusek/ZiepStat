@@ -1,5 +1,6 @@
 GNU GENERAL PUBLIC LICENSE
-#ZiepStat
+
+# ZiepStat
  
 ### vienkārša programma, ziepju lietošanas pēc publiskās tualetes statistikas krāšanas un analīzes
 
