@@ -51,13 +51,13 @@ pamācību par nodemcu moduļu programmēšanu var apskatīt te:
 
 ![image](https://github.com/Hlebusek/ZiepStat/assets/69074631/ab8e0355-0942-4709-b1ba-69ddef279426)
 
-1 - rādītājs (ziepju izmantošanas skaits/tualetes apmekljumu skaits)
+1 - rādītājs (ziepju izmantošanas skaits/tualetes apmeklējumu skaits)
 
 2 - Apskatāmo datu sākuma un beigu datuma izvēle
 
-3 - Procentu rādītājs (cik apmeklētāju procentuāli izmantoja ziepes
+3 - Procentu rādītājs (cik apmeklētāju procentuāli izmantoja ziepes)
 
-atkarībā no procentuālās vērtibas programmā istenota arī krāsas indikācija
+atkarībā no procentuālās vērtibas programmā īstenota arī krāsas indikācija
 
 ![image](https://github.com/Hlebusek/ZiepStat/assets/69074631/d352094a-8095-4012-ad3e-61bfaed2c90c)
 ![image](https://github.com/Hlebusek/ZiepStat/assets/69074631/0c2584a8-e790-42e8-a4c2-c78b63dea33e)
