@@ -1,4 +1,5 @@
-#ZIEPSTAT
+GNU GENERAL PUBLIC LICENSE
+ 
 ### vienkārša programma, ziepju lietošanas pēc publiskās tualetes statistikas krāšanas un analīzes
 
 ## Nepieciešamā programmatūra
